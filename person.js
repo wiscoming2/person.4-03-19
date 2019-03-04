@@ -1,7 +1,9 @@
+
 <html>
     <head>
             <title>html rocks!!</title>
             <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"> </script> 
+    </head>
         <body>
               <form onsubmit="printDate()" id="myForm">
                     <p> firstName: <input type="text" id="getName" required/> </p>
@@ -23,20 +25,47 @@
                     </p>
                     <button type="submit">submit</button>
                 </form>
+                <button onclick="Fill()">Fill</button>
               
         </body>
         <script>
+            function Fill()
+            {
+                var pers2={
+                    name : "matan",
+                    last : "levi",
+                    email : "matanlevi558@gmail.com"
+
+                }
+                $('#getName').val(pers2.name)
+            }
             function printDate()
             {
-                var x = $("#myForm input[type='radio']:checked").val()
-                var y = $("#country option:selected").text() 
-                var a = $('#getName').val()
-                var b = $('#getLastName').val()
-                var c = $('#getDate').val()
-                var d = $('#getEmail').val()
-                var veg = $('#getanser').is(':checked')
-                alert(`fisrt name : ${a} \n last name : ${b} \n birthday : ${c} \n Email : ${d} \n gender : ${x} \n country : ${y} \n ${veg}`)
+                var person = {
+                firstname : $('#getName').val(),
+                lastname : $('#getLastName').val(),
+                birthDay : $('#getDate').val(),
+                Email : $('#getEmail').val(),
+                Vegeterion : $('#getanser').is(':checked'),
+                gender : $("#myForm input[type='radio']:checked").val(),
+                country : $("#country option:selected").text()
+                }
+                printalert(person)
+
+            }
+
+            function printalert(person)
+            {
+                alert
+                {`
+                firstname : ${person.firstname}
+                lastname : ${person.lastname}
+                birthDay : ${person.birthDay}
+                Email : ${person.Email}
+                Vegeterion : ${person.Vegeterion}
+                gender : ${person.gender}
+                country : ${person.country}
+                `}
             }
         </script>
-    </head>
 </html>
