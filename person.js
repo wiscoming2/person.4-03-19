@@ -19,7 +19,7 @@
                             <option value="France">Farnce</option>
                          </select>
                     <p>
-                        <input type="checkbox" name="Vegeterion" value="Vegeterion"> I am a Vegeterion<br>
+                        <input type="checkbox" name="Vegeterion" id="getanser" value="Vegeterion"> I am a Vegeterion<br>
                     </p>
                     <button type="submit">submit</button>
                 </form>
@@ -28,13 +28,14 @@
         <script>
             function printDate()
             {
-                var x = $('input[name=gender]:checked', '#myForm').val()
-                var y = $('#country option:selected').text() 
+                var x = $("#myForm input[type='radio']:checked").val()
+                var y = $("#country option:selected").text() 
                 var a = $('#getName').val()
                 var b = $('#getLastName').val()
                 var c = $('#getDate').val()
                 var d = $('#getEmail').val()
-                alert(`fisrt name : ${a} \n last name : ${b} \n birthday : ${c} \n Email : ${d} \n gender : ${x} \n country : ${y}`)
+                var veg = $('#getanser').is(':checked')
+                alert(`fisrt name : ${a} \n last name : ${b} \n birthday : ${c} \n Email : ${d} \n gender : ${x} \n country : ${y} \n ${veg}`)
             }
         </script>
     </head>
